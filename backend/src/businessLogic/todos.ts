@@ -34,3 +34,10 @@ const newItem = {
 return await todosAccess.createTodoItem(newItem)
 
 }
+
+export async function getTodosForUser(userId: string): Promise<TodoItem[]>
+{
+    logger.info("Calling GetTodosForUser function")
+    return todosAccess.getAllTodos(userId)
+    
+}
