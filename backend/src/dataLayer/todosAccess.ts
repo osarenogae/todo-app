@@ -20,7 +20,7 @@ export class TodosAccess {
 
     async getAllTodos(userId: string): Promise<TodoItem[]>
     {
-        logger.info('Calling all todos function...')
+        logger.info('Calling function to get all todos...')
 
         const result = await this.docClient
         .query({
@@ -37,7 +37,7 @@ export class TodosAccess {
 
     async createTodoItem(todoItem : TodoItem): Promise<TodoItem> 
     {
-        logger.info('Calling createTodoItem function...')
+        logger.info('Calling function to create todo item...')
         
         const result = await this.docClient
         .put({
@@ -56,7 +56,7 @@ export class TodosAccess {
         todoUpdate: TodoUpdate
     ): Promise <TodoUpdate> { 
         
-        logger.info('Calling Update Todo Item function...')
+        logger.info('Calling function to update todo item...')
         
         await this.docClient
         .update({
@@ -80,7 +80,7 @@ export class TodosAccess {
 
     async deleteTodoItem(todoId: string, userId: string): Promise<void> 
     {
-        logger.info('Calling Delete Todo Function...')
+        logger.info('Calling function to delete todo item...')
         await this.docClient
         .delete({
             TableName: this.todosTable,
@@ -93,7 +93,7 @@ export class TodosAccess {
     }
 
     async updateTodoAttachmentUrl(todoId: string, userId: string, attachmentUrl: string): Promise<void> {
-        logger.info('Calling Update Todo Attachment Url Function...')
+        logger.info('Calling function to update todo attachment url...')
         await this.docClient
         .update({
             TableName: this.todosTable,
