@@ -47,3 +47,9 @@ export async function updateTodo(todoId: string, userId: string, todoUpdate: Upd
     logger.info('Calling function to update todos...')
     return todosAccess.updateTodoItem(todoId, userId, todoUpdate)
 }
+
+export async function deleteTodo(todoId: string, userId: string): Promise<string>
+{
+    logger.info('Calling function to delete todos...')
+    return todosAccess.deleteTodoItem(todoId, userId)
+}
