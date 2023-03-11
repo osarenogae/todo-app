@@ -71,11 +71,12 @@ export class TodosAccess {
                 ':dueDate': todoUpdate.dueDate,
                 ':done': todoUpdate.done
             },
-            ExpressionAttributeNames: { '#name': 'name'}
+            ExpressionAttributeNames: { '#name': 'name'},
+            ReturnValues: 'UPDATED_NEW'
         })
         .promise()
 
-        return todoUpdate
+        return todoUpdate as TodoUpdate
     }
 
     async deleteTodoItem(todoId: string, userId: string): Promise<void> 
